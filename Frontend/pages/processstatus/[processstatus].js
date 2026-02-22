@@ -57,7 +57,7 @@ var address;
 var support_address;
 var BuyerTokenstatus = false;
 var StampDutyTokenStatus = false;
-var OwnerAdhar = "";
+var OwnerMwaura = "";
 var OwnerContact = "";
 var PaymentDuration = "";
 
@@ -161,7 +161,7 @@ const processstatus = () => {
   }
 
   function FetchData() {
-    fetch("https://rich-cyan-fawn-robe.cyclic.app/SellingLand/")
+    fetch("http/SellingLand/")
       .then((response) => response.json())
       .then((response) => {
         // console.log(response);
@@ -208,7 +208,7 @@ const processstatus = () => {
         ProcessStatus = Dataset[i].ProcessStatus;
         BuyerTokenstatus = Dataset[i].BuyerTokenstatus;
         StampDutyTokenStatus = Dataset[i].StampDutyTokenStatus;
-        OwnerAdhar = Dataset[i].OwnerAdhar;
+        OwnerMwaura = Dataset[i].OwnerMwaura;
         OwnerContact = Dataset[i].OwnerContact;
         PaymentDuration = Dataset[i].PaymentDuration;
       }
@@ -406,8 +406,8 @@ const processstatus = () => {
             <Col span={12}>
               <div className="p-2 px-4">
                 <h1 className="mt-0  font-bold">Area: {Area} sq.m.</h1>
-                <h3 className="">Loaction: Nagpur, Maharashtra</h3>
-                <h3 className="">Price: Rs. {Price}</h3>
+                <h3 className="">Loaction: Nairobi, Westlands</h3>
+                <h3 className="">Price: Kes. {Price}</h3>
                 <h3>PID: {PropertyID}</h3>
                 <h3>Survey no: {SurveyNo}</h3>
                 <h3>Owner: {Owner}</h3>

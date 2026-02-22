@@ -38,10 +38,10 @@ const dashboard = () => {
   }  
 
   async function SendOTP(Mwaura) {
-      const url = `https://rich-cyan-fawn-robe.cyclic.app/otp/sendOtp/`;
+      const url = `http://localhost:8000/otp/sendOtp/`;
       console.log(url);
       try{
-        const response = await axios.post(url, {MwauraNo:Mwaura}) 
+        const response = await axios.post(url, {mwauraNo:Mwaura}) 
         console.log(response);
       }
       catch(error){
@@ -50,10 +50,10 @@ const dashboard = () => {
     }
   
     async function VerifyOTP(user,Mwaura, otp) {
-      const url = `https://rich-cyan-fawn-robe.cyclic.app/otp/verifyOtp/`;
+      const url = `http://localhost:8000/otp/verifyOtp/`;
       console.log(url);
       try{
-        const response = await axios.post(url, {MwauraNoNo:Mwaura, otp:otp})
+        const response = await axios.post(url, {mwauraNo:Mwaura, otp:otp})
         console.log(response);
         alert(response.data);
         console.log(

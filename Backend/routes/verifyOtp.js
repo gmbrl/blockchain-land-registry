@@ -4,15 +4,15 @@ const UserDetails = require("../models/userDetails");
 const sendMessage = require("../utils/sendMessage");
 
 router.post("/sendOtp", async (req, res) => {
-    if(!req.body.aadharNo){
+    if(!req.body.mwauraNo){
         res.status(400).send({
             "message": "Please enter the required fields"
         })
         return;
     }
     try{
-        const aadharNo = req.body.aadharNo;
-        var user_details = await UserDetails.findOne({aadharNo: aadharNo})
+        const mwauraNo = req.body.aadharNo;
+        var user_details = await UserDetails.findOne({mwauraNoNo: mwauraNo})
 
         if(!user_details){
             res.status(400).send({
@@ -39,17 +39,17 @@ router.post("/sendOtp", async (req, res) => {
 })
 
 router.post("/verifyOtp", async (req, res) => {
-    if(!req.body.aadharNo || !req.body.otp){
+    if(!req.body.mwauraNo || !req.body.otp){
         res.status(400).send({
             "message": "Please enter the required fields"
         })
         return;
     }
     try{
-        const aadharNo = req.body.aadharNo;
+        const mwauraNo = req.body.mwauraNo;
         const otp = req.body.otp;
 
-        var user_details = await UserDetails.findOne({aadharNo: aadharNo})
+        var user_details = await UserDetails.findOne({mwauraNo: mwauraNo})
 
         if(!user_details){
             res.status(400).send({

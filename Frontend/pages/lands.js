@@ -35,7 +35,7 @@ const lands = () => {
     // console.log(Data)
     setaddress(<Metamask />);
 
-    fetch("https://rich-cyan-fawn-robe.cyclic.app/SellingLand")
+    fetch("http://localhost:8000/SellingLand")
       .then((response) => response.json())
       .then(async (response) => {
         // console.log(response);
@@ -185,16 +185,16 @@ const lands = () => {
                   }
                   options={[
                     {
-                      value: "Nagpur",
-                      label: "Nagpur",
+                      value: "Thika",
+                      label: "Thika",
                     },
                     {
-                      value: "Mumbai",
-                      label: "Mumbai",
+                      value: "Ruaka",
+                      label: "Ruaka",
                     },
                     {
-                      value: "Pune",
-                      label: "Pune",
+                      value: "Ngong",
+                      label: "Ngong",
                     },
                   ]}
                 />

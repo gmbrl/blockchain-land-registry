@@ -55,7 +55,7 @@ useEffect(() => {
 
 
 function FetchData() {
-  fetch("https://rich-cyan-fawn-robe.cyclic.app/SellingLand/")
+  fetch("https/SellingLand/")
     .then((response) => response.json())
     .then((response) => {
       // console.log(response);

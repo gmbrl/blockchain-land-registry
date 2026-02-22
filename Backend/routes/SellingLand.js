@@ -17,6 +17,44 @@ router.get("/", async (req, res) => {
   }
 });
 
+
+
+//Dummy data 2️⃣ SEED ROUTE (add this - AFTER GET, BEFORE POST "/")
+router.post('/seed', async (req, res) => {
+  const thikaLands = [
+    {
+      owner: "Peterson Chege",
+      propertyID: 1001,
+      Price: 5000000,
+      City: "Thika",
+      Area: 0.25,
+      ProcessStatus: 1,
+      PaymentStatus: true,
+      OwnerContact: "+254700123456"
+    },
+    {
+      owner: "John Mwangi", 
+      propertyID: 1002,
+      Price: 8500000,
+      City: "Thika",
+      Area: 0.5,
+      ProcessStatus: 2,
+      PaymentStatus: false
+    }
+  ];
+
+  try {
+    await SellingLand.deleteMany({});
+    await SellingLand.insertMany(thikaLands);
+    res.json({ 
+      message: "✅ Database seeded with Thika land records!",
+      count: thikaLands.length 
+    });
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+  }
+});
+
 router.post("/", async (req, res) => {
   res.set({
     "Access-Control-Allow-Headers": "*",
@@ -149,8 +187,8 @@ router.post("/:id", async (req, res) => {
     if (req.body.TransactionHash) {
       sellingLand.TransactionHash = req.body.TransactionHash;
     }
-    if (req.body.OwnerAdhar) {
-        sellingLand.OwnerAdhar = req.body.OwnerAdhar;
+    if (req.body.OwnerMwaura) {
+        sellingLand.OwnerMwaura = req.body.OwnerAdhar;
       }
       if (req.body.OwnerContact) {
         sellingLand.OwnerContact = req.body.OwnerContact;
@@ -172,5 +210,6 @@ router.post("/:id", async (req, res) => {
     res.status(400).send({ message: "Error " + error.message });
   }
 });
+
 
 module.exports = router;

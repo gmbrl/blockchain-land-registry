@@ -1,16 +1,6 @@
-const twilio = require('twilio');
+const sendMessage = (phone, message) => {
+    console.log(`OTP sent to ${phone}: ${message}`);
+    return { success: true, message: 'OTP sent successfully' };
+};
 
-const accountSid = process.env.TWILIO_ACCOUNT_SID;
-const authToken = process.env.TWILIO_AUTH_TOKEN;
-
-const client = new twilio(accountSid, authToken);
-
-async function sendMessage(phoneNo, otp)  {
-    await client.messages.create({
-        body: 'Your OTP for LandChain is ' + otp,
-        from: process.env.TWILIO_PHONE_NO,
-        to: phoneNo
-    })
-}
-
-module.exports = sendMessage;
+module.exports = { sendMessage };

@@ -58,7 +58,7 @@ export const getMetadataURL = async (
           }`,
     };
 
-    fetch("https://rich-cyan-fawn-robe.cyclic.app/landDetails")
+    fetch("http/landDetails")
       .then((response) => response.json())
       .then((response) => {
         // console.log(response);

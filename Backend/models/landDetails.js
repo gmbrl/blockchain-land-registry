@@ -34,7 +34,7 @@ const landDetailsSchema = new mongoose.Schema({
         type: Boolean,
         default: false,
     },
-    OwnerAdhar:{
+    OwnerMwaura:{
         type: Number,
         default: 123456789012,
     },

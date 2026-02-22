@@ -73,8 +73,8 @@ router.post('/:id', async(req, res) => {
       if (req.body.status) {
         landDetails.status = req.body.status;
       }
-      if (req.body.OwnerAdhar) {
-        landDetails.OwnerAdhar = req.body.OwnerAdhar;
+      if (req.body.OwnerMwaura) {
+        landDetails.OwnerMwaura = req.body.OwnerAdhar;
       }
       if (req.body.OwnerContact) {
         landDetails.OwnerContact = req.body.OwnerContact;
